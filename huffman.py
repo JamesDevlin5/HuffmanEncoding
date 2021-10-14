@@ -59,7 +59,6 @@ class Encoding:
 
 
 def huffman_encode(symbols, inverse=False):
-    tbl = FreqTable(symbols)
     if inverse:
         pref = "0"
     else:

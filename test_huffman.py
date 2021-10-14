@@ -13,3 +13,8 @@ def test_inverse_basic():
     syms = "aaabbc"
     output = "1110101001"
     assert huffman_encode(syms, inverse=True) == output
+
+
+def test_empty_input():
+    assert huffman_encode("") == ""
+    assert huffman_encode("", inverse=True) == ""
