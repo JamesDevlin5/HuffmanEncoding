@@ -58,8 +58,14 @@ class Encoding:
         return self._pref * prefix_len + self._suff
 
 
-def huffman_encode(symbols):
-    encoding = Encoding(FreqTable(symbols))
+def huffman_encode(symbols, inverse=False):
+    tbl = FreqTable(symbols)
+    if inverse:
+        pref = "0"
+    else:
+        pref = "1"
+
+    encoding = Encoding(FreqTable(symbols), prefix=pref)
     result = ""
     for sym in symbols:
         result += encoding.sym_to_str(sym)
